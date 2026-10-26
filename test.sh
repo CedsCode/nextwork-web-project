@@ -2,11 +2,10 @@
 
 echo "==== RUNNING SIMPLE TESTS ===="
 
-echo "Test 1: Checking for web app file..."
-if [ -f "index.jsp" ]; then
+if [ -f "src/main/webapp/index.jsp" ]; then
   echo "✅ PASS: index.jsp exists"
 else
-  echo "❌ FAIL: index.jsp not found"
+  echo "❌ FAIL: src/main/webapp/index.jsp not found"
   exit 1
 fi
 
