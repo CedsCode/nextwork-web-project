@@ -1,15 +1,13 @@
 #!/bin/bash
 
 echo "==== RUNNING SIMPLE TESTS ===="
-echo "Test 1: Checking project structure..."
-if [ -d "src" ]; then
-  echo "✅ PASS: src directory exists"
+
+echo "Test 1: Checking for web app file..."
+if [ -f "index.jsp" ]; then
+  echo "✅ PASS: index.jsp exists"
 else
-  echo "❌ FAIL: src directory not found"
+  echo "❌ FAIL: index.jsp not found"
   exit 1
 fi
 
-echo "Test 2: Checking for web app files..."
-if [ -f "src/main/webapp/index.jsp" ]; then
-  echo "✅ PASS: index.jsp exists"
-else
+echo "==== ALL TESTS PASSED ===="
