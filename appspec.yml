@@ -1,0 +1,11 @@
+# CodeDeploy appspec for the NextWork web app.
+# Lives at the ROOT of the GitHub repo (next to buildspec.yml).
+# No hooks, no scripts: the deployment just drops the built WAR into Tomcat's
+# webapps folder, and Tomcat (installed on the instance by the CloudFormation
+# template) auto-deploys it. Redeploys overwrite the previous WAR.
+version: 0.0
+os: linux
+files:
+  - source: target/nextwork-web-project.war
+    destination: /opt/tomcat/webapps
+file_exists_behavior: OVERWRITE
